@@ -1,7 +1,12 @@
 class RecipesController < ApplicationController
+	before_action :authenticate_user!, :only => [:new, :create]
 
 	def index
-		@recipes = Recipe.all
+		if params[:search]
+      @recipes = Recipe.search(params[:search]).order("created_at DESC")
+    else
+			@recipes = Recipe.all
+		end
 	end
 
 	def new
@@ -9,7 +14,7 @@ class RecipesController < ApplicationController
 	end
 
 	def create
-    Recipe.create(recipe_params)
+		current_user.recipes.create(recipe_params)
     redirect_to root_path
   end
 
