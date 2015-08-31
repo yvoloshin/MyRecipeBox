@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The primary goal of My Recipe Box is to be an online recipe box where we can easily store and display our recipes. The secondary goal is to be a social network for recipe sharing where we can share recipes with other site members. 
 
-Things you may want to cover:
+As of 9/1/2015 it is still a work in progress. Features that still need to be added are 
+- support for adding photos
+- support for adding comments
+- recipe ratings
+- ability to back up all of a user's recipes into a single text file
 
-* Ruby version
+Try My Recipe Box live at https://allmyrecipes.herokuapp.com
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+This app is being built by {Yury Voloshin}[https://www.linkedin.com/in/yvoloshin]

@@ -1,0 +1,10 @@
+<div class = "booyah-box col-xs-10 col-xs-offset-1">
+	<h2 class = "subheader">All Recipes</h2>
+	<br />
+	<% @allrecipes.each do |recipe| %>
+		<div class = "booyah-box col-xs-10 col-sm-5 col-xs-offset-1">
+			<h2 class = "recipe-name"><%= link_to recipe.name, recipe_path(recipe) %></h2><br>
+			<%= recipe.description %></br>
+		</div>
+	<% end %>
+</div>

@@ -26,8 +26,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Add New Recipe', new_recipe_path %></li>
-        <li><%= link_to 'Browse My Recipes', '#' %></li>
-        <li><%= link_to 'Browse All Recipes', '#' %></li>
+        <li><%= link_to 'Browse My Recipes', myrecipes_path %></li>
+        <li><%= link_to 'Browse All Recipes', allrecipes_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<% if user_signed_in? %>

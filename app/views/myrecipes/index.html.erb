@@ -1,0 +1,14 @@
+<div class = "booyah-box col-xs-10 col-xs-offset-1">
+		<h2 class = "subheader">All My Recipes</h2>
+		<br />
+		<% if @myrecipes.length == 0 %>
+			<h4 class = "norecipes">You have not added any recipes.</h4> 
+			<h4><%= link_to 'Add a recipe', new_recipe_path %> to display it here.</h4>
+		<% else %>
+			<% @myrecipes.each do |recipe| %>
+				<div class = "booyah-box col-xs-10 col-sm-5 col-xs-offset-1">
+					<h2 class = "recipe-name"><%= link_to recipe.name, recipe_path(recipe) %></h2><br>
+					<%= recipe.description %></br>
+				</div>
+			<% end %>
+		<% end %>
