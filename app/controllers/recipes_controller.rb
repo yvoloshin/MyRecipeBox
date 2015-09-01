@@ -15,12 +15,50 @@ class RecipesController < ApplicationController
 
 	def create
 		current_user.recipes.create(recipe_params)
-    redirect_to root_path
+		if @recipe.valid?
+			redirect_to root_path
+		else
+			render :new, :status => :unprocessable_entity
+		end
   end
 
   def show
-  	@recipe=Recipe.find(params[:id])
+  	@recipe = Recipe.find(params[:id])
   end
+
+  def edit
+		@recipe = Recipe.find(params[:id])
+
+		if @recipe.user != current_user
+			return render :text => 'Not Allowed', :status => :forbidden
+		end
+	end
+
+	def update
+		@recipe = Recipe.find(params[:id])
+
+		if @recipe.user != current_user
+			return render :text => 'Not Allowed', :status => :forbidden
+		end
+		
+		@recipe.update_attributes(recipe_params)
+
+		if @recipe.valid?
+			redirect_to root_path
+		else
+			render :edit, :status => :unprocessable_entity
+		end
+		
+	end
+
+	def destroy
+		@recipe = Recipe.find(params[:id])
+		if @recipe.user != current_user
+			return render :text => 'Not Allowed', :status => :forbidden
+		end
+		@recipe.destroy
+		redirect_to root_path
+	end
 
   private
 

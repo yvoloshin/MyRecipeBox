@@ -1,0 +1,11 @@
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+	<h1>Edit Your Recipe Details</h1>
+	<%= simple_form_for @recipe do |f| %>
+	  <%= f.input :name %>
+	  <%= f.input :description %>
+	  <%= f.input :ingredients %>
+	  <%= f.input :instructions %>
+	  <br />
+	  <%= f.submit 'Update', :class=>"btn btn-primary" %>
+	<% end %>
+</div>
