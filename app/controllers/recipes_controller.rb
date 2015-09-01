@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
 	end
 
 	def create
-		current_user.recipes.create(recipe_params)
+		@recipe = current_user.recipes.create(recipe_params)
 		if @recipe.valid?
 			redirect_to root_path
 		else
