@@ -8,7 +8,9 @@
 			<% if recipe.comments.present? %>
 				<div class = "pull-right">
 					<em>Average Rating: <%= recipe.avg_rating %></em></br>
-					<em>My Last Rating: <%= recipe.comments.where(user: current_user).last.humanized_rating %></em>
+					<% if user_signed_in? %>
+						<em>My Last Rating: <%= recipe.comments.where(user: current_user).last.humanized_rating %></em>
+					<% end %>
 				</div>
 			<% end %>
 			
