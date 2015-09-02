@@ -1,11 +1,14 @@
 == README
 
-The primary goal of My Recipe Box is to be an online recipe box where we can easily store and display our recipes. The secondary goal is to be a social network for recipe sharing where we can share recipes with other site members. 
+The primary goal of My Recipe Box is to be an online recipe box where we can easily store and display our recipes. The secondary goal is to be a social network for recipe sharing where we can share recipes with other site members. The features that make this app different from most other recipe-sharing sites are:
+1) The focus is to make it convenient for the users to store and display their own recipes. This is implemented by listing out the user's own recipes on the front page upon logging in. 
+2) The display is optimized for mobile phones. 
+3) The ratings system lets the users see their own rating together with those of other users, as well as the average rating. 
 
-As of 9/1/2015 it is still a work in progress. Features that still need to be added are 
+As of 9/2/2015 it is still a work in progress. Features that still need to be added are 
 - support for adding photos
-- support for adding comments
-- recipe ratings
+- use Ajax to add comments and update ratings
+- enable users to select preferred units of measurement for ingredients
 - ability to back up all of a user's recipes into a single text file
 
 Try My Recipe Box live at https://allmyrecipes.herokuapp.com
