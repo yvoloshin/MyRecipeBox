@@ -1,24 +1,14 @@
 <div class = "booyah-box col-xs-10 col-xs-offset-1">
 	<h2><%= @recipe.name %></h2>
+	
 	<i><%= @recipe.description %></i><br />
 	<br />
 	<h3 class="recipe-header">Ingredients</h3>
 	<p><%= simple_format(@recipe.ingredients).html_safe %></p><br />
 	<h3 class="recipe-header">Instructions</h3>
 	<p><%=simple_format(@recipe.instructions).html_safe %></p>
-</div>
 
-<div class = "clear">
-	<%= simple_form_for @comment, :url => recipe_comments_path(@recipe) do |f| %>
-	<%= f.input :message %>
-	<%= f.input :rating %>
-	<%= f.submit "Add a Comment", :class => 'btn btn-primary' %>
-	<% end %>
-</div>
-
-<br />
-
-<div class = "pull-right">
+	<div class = "pull-right">
  <% if current_user && current_user == @recipe.user %>
 	<!--   <button type="button" class="btn btn-primary">
   		Add a photo
@@ -27,4 +17,31 @@
 		<%= link_to 'Delete recipe', recipe_path(@recipe), :method => :delete, :data => {:confirm => 'Are you sure you want to delete this recipe?'}, :class => "btn btn-primary"  %>
 	<% end %>
 </div>
+
+</div>
+
+<div class = "clear col-xs-10 col-xs-offset-1">
+	<%= simple_form_for @comment, :url => recipe_comments_path(@recipe) do |f| %>
+	<%= f.input :message %>
+	<%= f.input :rating %>
+	<%= f.submit "Add a Comment", :class => 'btn btn-primary' %>
+	<% end %>
+</div>
+
+<br /><br />
+
+<h1>Comments</h1>
+
+<% @recipe.comments.each do |comment| %>
+  <div class="col-xs-12 col-sm-6">
+    <blockquote>
+      <b><%= comment.rating %></b> -
+        <%= comment.message %>
+      <small><%= comment.user.email %></small>
+    </blockquote>
+  </div>
+<% end %>
+
+<br />
+
 
