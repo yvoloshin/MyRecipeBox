@@ -1,8 +1,10 @@
 <div class = "booyah-box col-xs-10 col-xs-offset-1">
 	<h2><%= @recipe.name %></h2>
-	<div class = "pull-right">
-		<em>Average Rating: <%= @recipe.avg_rating %></em>
-	</div>
+	<% if @recipe.comments.present? %>
+		<div class = "pull-right">
+			<em>Average Rating: <%= @recipe.avg_rating %></em>
+		</div>
+	<% end %>
 	<br />
 	<i><%= @recipe.description %></i><br />
 	<br />
