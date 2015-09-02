@@ -10,7 +10,15 @@ class Recipe < ActiveRecord::Base
   def self.search(query)
      #where(:title, query) -> This would return an exact match of the query
     where("LOWER(name) like ?", "%#{query}%") 
-	
   end
+
+  def avg_rating
+    rating_vals = self.comments.map do |c|
+        c.rating[0].to_i
+    end
+
+    rating_vals.sum.to_f / rating_vals.length
+  end
+
 
 end

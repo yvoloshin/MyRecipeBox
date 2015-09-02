@@ -4,11 +4,16 @@
 	<% @allrecipes.each do |recipe| %>
 		<div class = "booyah-box col-xs-10 col-sm-5 col-xs-offset-1">
 			<h2 class = "recipe-name"><%= link_to recipe.name, recipe_path(recipe) %></h2><br>
+
+			<div class = "pull-right">
+				<em>Average Rating: <%= recipe.avg_rating %></em>
+			</div>
+			
 			<%= recipe.description %></br>
 			
 			<div class = "pull-right"
 				<% if recipe.user.present? %>
-				<small><%= recipe.user.email %></small>
+					<small><%= recipe.user.email %></small>
 				<% end %>
 			</div>
 
