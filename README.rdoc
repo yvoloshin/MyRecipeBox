@@ -10,7 +10,7 @@ The primary goal of My Recipe Box is to be an online recipe box where we can eas
 
 As of 9/2/2015 it is still a work in progress. Features that still need to be added are 
 - support for adding photos
-- use Ajax to add comments and update ratings
+- a test suite
 - enable users to select preferred units of measurement for ingredients
 - ability to back up all of a user's recipes into a single text file
 

@@ -25,12 +25,14 @@
 
 </div>
 
+<div id = "comment_form">
 <div class = "clear col-xs-10 col-xs-offset-1">
-	<%= simple_form_for @comment, :url => recipe_comments_path(@recipe) do |f| %>
+	<%= simple_form_for @comment, :url => recipe_comments_path(@recipe), remote: true do |f| %>
 	<%= f.input :message %>
 	<%= f.input :rating, :as => :select, :collection => Comment::RATINGS %>
 	<%= f.submit "Add a Comment", :class => 'btn btn-primary' %>
 	<% end %>
+</div>
 </div>
 
 <br /><br />
@@ -50,6 +52,8 @@
 <% end %>
 
 <br />
+
+
 
 
 
