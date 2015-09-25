@@ -36,13 +36,14 @@ class RecipesControllerTest < ActionController::TestCase
 	    # recipe = Recipe.create(name: recipes(:two).name,
 	 			# 										ingredients: recipes(:two).ingredients,
 	 			# 										instructions: recipes(:two).instructions)
-		
+		assert_difference 'user.recipes.count' do
 	    post :create, {:recipe => {
 	        :name => 'test2',
 	        :ingredients => 'ingredient1, ingredient2', 
 	        :instructions => 'instruction1, instruction2' 
 	      }
 	    }
+	  end
 
 	    # post :create, { :recipe => recipes(:one) }
 
