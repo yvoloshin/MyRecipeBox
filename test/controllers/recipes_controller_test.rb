@@ -9,16 +9,21 @@ class RecipesControllerTest < ActionController::TestCase
     @user = users(:one)
   end
 
-  # test "should get index" do
-  #   get :index
-  #   assert_response :success
-  #   assert_not_nil assigns(:recipes)
-  # end
+  test "should get index" do
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:recipes)
+  end
 
 	test "should get new" do
 		sign_in @user
     get :new
     assert_response :success
+  end
+
+  test "should redirect to sign-in form" do
+    get :new
+    assert_redirected_to new_user_session_path
   end
 
 	
