@@ -8,9 +8,6 @@ The primary goal of My Recipe Box is to be an online recipe box where we can eas
 
 3) The ratings system lets the users see their own rating together with those of other users, as well as the average rating. 
 
-As of 9/26/2015 it is still a work in progress. Features that still need to be added are 
-- support for adding photos
-- enable users to select preferred units of measurement for ingredients
 
 Try My Recipe Box live at https://allmyrecipes.herokuapp.com
 
