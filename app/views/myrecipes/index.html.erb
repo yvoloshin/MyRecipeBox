@@ -7,17 +7,16 @@
 		<% else %>
 			<% @myrecipes.each do |recipe| %>
 				<div class = "booyah-box col-xs-10 col-sm-5 col-xs-offset-1">
-					<h2 class = "recipe-name"><%= link_to recipe.name, recipe_path(recipe) %></h2><br>
-
-					<% if @recipe.comments.present? %>
+					<h2 class = "recipe-name"><%= link_to recipe.name, recipe_path(recipe) %></h2>
+					<br>
+					<% if recipe.comments.present? %>
 						<div class = "pull-right">
 							<em>Average Rating: <%= @recipe.avg_rating %></em>
 							<em>My Last Rating: <%= recipe.comments.where(user: current_user).last.humanized_rating %></em>
 						</div>
-					<% end %>
-					
-					<%= recipe.description %></br>
-		
+					<% end %>				
+					<%= recipe.description %>
+					</br>		
 				</div>
 			<% end %>
 		<% end %>

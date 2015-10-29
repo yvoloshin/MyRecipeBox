@@ -1,6 +1,7 @@
 class Recipe < ActiveRecord::Base
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :photos, dependent: :destroy
   validates :name, :presence => true, length: { minimum: 3 }
   validates :ingredients, :presence => true
   validates :instructions, :presence => true

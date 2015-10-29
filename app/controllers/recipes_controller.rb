@@ -25,6 +25,7 @@ class RecipesController < ApplicationController
   def show
   	@recipe = Recipe.find(params[:id])
   	@comment = Comment.new
+  	@photo=Photo.new
   end
 
   def edit
