@@ -13,6 +13,14 @@
     text-decoration: none;
 }
 
+.thumbnail {
+  float: left !important;
+}
+
+.recipe-picture {
+  margin: 10px;
+}
+
 .hero {
   background: url('hero.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
