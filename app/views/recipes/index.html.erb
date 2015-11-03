@@ -33,15 +33,13 @@
 		  			</div>
 	  			<% end %>
 					<h2 class = "recipe-name"><%= link_to recipe.name, recipe_path(recipe) %></h2><br>
+					<%= recipe.description %></br></br>
 					<% if recipe.comments.present? %>
-						<div class = "pull-right">
+						<div class="pull-right">
 							<em>Average Rating: <%= recipe.avg_rating %></em><br />
 							<em>My Last Rating: <%= recipe.comments.where(user: current_user).last.humanized_rating %></em>
 						</div>
-					<% end %>
-					<%= recipe.description %></br></br>
-					
-			
+					<% end %>		
 				</div>
 			<% end %>
 		<% end %>
